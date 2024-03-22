@@ -3,10 +3,18 @@ export default function Home() {
   return (
     <main className="
       bg-slate-100 h-screen flex items-center justify-center p-5
-      dark:bg-gray-700">
+      dark:bg-gray-700 flex-col gap-2">
+      <div className="flex flex-col gap-2 bg-white shadow-lg p-5 rounded-xl w-full max-w-md">
+        <input type="text" placeholder="Sarch here..."
+          className="w-full h-10 bg-gray-200 px-5 rounded-full outline-none ring
+          ring-transparent focus:ring-offset-orange-500 focus:ring-offset-2 transition-shadow"/>
+        <button className="bg-black text-white w-full py-2 rounded-full font-medium
+          transition-transform active:scale-90 focus:scale-90 outline-none">Search</button>
+      </div>
+
       <div className="
         bg-white shadow-lg p-5 rounded-xl w-full
-        dark:bg-gray-600">
+        dark:bg-gray-600 max-w-md">
         <div className="flex justify-between items-center">
           <div className="flex flex-col">
             <span className="
