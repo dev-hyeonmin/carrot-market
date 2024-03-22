@@ -4,12 +4,18 @@ export default function Home() {
     <main className="
       bg-slate-100 h-screen flex items-center justify-center p-5
       dark:bg-gray-700 flex-col gap-2">
-      <div className="flex flex-col gap-2 bg-white shadow-lg p-5 rounded-xl w-full max-w-md">
-        <input type="text" placeholder="Sarch here..."
+      <div className="flex flex-col gap-2 bg-white shadow-lg p-5 rounded-xl w-full max-w-2xl md:flex-row">
+        <input
+          type="email"
+          placeholder="Sarch here..."
+          required
           className="w-full h-10 bg-gray-200 px-5 rounded-full outline-none ring
-          ring-transparent focus:ring-offset-orange-500 focus:ring-offset-2 transition-shadow"/>
-        <button className="bg-black text-white w-full py-2 rounded-full font-medium
-          transition-transform active:scale-90 focus:scale-90 outline-none">Search</button>
+          ring-transparent transition-shadow peer
+          focus:ring-2 focus:ring-green-500 invalid:focus:ring-red-600"/>
+        <span className="text-red-700 pl-3 hidden peer-invalid:block">Email is required.</span>
+        <button className="bg-black text-white py-2 rounded-full font-medium
+          transition-transform active:scale-90 focus:scale-90 outline-none md:px-10
+          peer-invalid:opacity-10">Search</button>
       </div>
 
       <div className="
