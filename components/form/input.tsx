@@ -1,11 +1,13 @@
 interface InputProps {
   type: string;
+  name: string;
   placeholder: string;
   required: boolean;
   errors?: string[];
 }
 export default function Input({
   type,
+  name,
   placeholder,
   required,
   errors
@@ -17,6 +19,7 @@ export default function Input({
               h-10 bg-gray-900 ring-2 ring-neutral-200 rounded-md p-2 placeholder:text-neutral-400 transition
                 focus:ring-orange-500 focus:ring-3 focus:outline-none"
         type={type}
+        name={name}
         placeholder={placeholder}
         required={required} />  
       
