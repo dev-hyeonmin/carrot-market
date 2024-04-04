@@ -10,7 +10,7 @@ export default function Input({
   name,
   placeholder,
   required,
-  errors
+  errors = []
 }: InputProps) {
   return (
     <div className="flex flex-col gap-2">
@@ -23,7 +23,7 @@ export default function Input({
         placeholder={placeholder}
         required={required} />  
       
-      {errors?.map((error, index) => 
+      {errors.map((error, index) => 
         <span key={index} className="text-red-500 font-medium">{error}</span>
       )}
     </div>

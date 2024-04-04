@@ -1,9 +1,15 @@
+"use client";
+
 import Button from "@/components/actions/button";
 import Input from "@/components/form/input";
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
+import { useFormState } from "react-dom";
+import { createAccount } from "./actions";
 
 export default function CreateAccount() {
+  const [state, action] = useFormState(createAccount, null);
+
   return (
     <div className="flex flex-col gap-10 py-8 px-6">
       <div className="flex flex-col *:font-medium">
@@ -11,25 +17,33 @@ export default function CreateAccount() {
         <h2 className="text-xl">Fill in the form below to join!</h2>
       </div>
 
-      <form className="flex flex-col gap-3">
+      <form action={action} className="flex flex-col gap-3">
         <Input
           type="text"
+          name="username"
           placeholder="Username"
+          errors={state?.fieldErrors.username}
           required />
 
         <Input
           type="text"
+          name="email"
           placeholder="Email"
+          errors={state?.fieldErrors.email}
           required />
 
         <Input
           type="text"
+          name="password"
           placeholder="Password"
+          errors={state?.fieldErrors.password}
           required />
 
         <Input
           type="text"
+          name="confirmPassword"
           placeholder="Confirm Password"
+          errors={state?.fieldErrors.confirmPassword}
           required />
 
         <Button 
