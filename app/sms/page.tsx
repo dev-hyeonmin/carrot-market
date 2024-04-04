@@ -11,11 +11,13 @@ export default function SMS() {
 
       <form className="flex flex-col gap-3">
         <Input
+          name="phone"
           type="text"
           placeholder="Phone number"
           required />
 
         <Input
+          name="token"
           type="text"
           placeholder="Verification code"
           required />

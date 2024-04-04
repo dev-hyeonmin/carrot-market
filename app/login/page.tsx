@@ -2,13 +2,14 @@
 
 import Button from "@/components/actions/button";
 import Input from "@/components/form/input";
+import { PASSWORD_MIN_LENGTH } from "@/lib/constants";
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { useFormState } from "react-dom";
-import { handleSubmit } from "./actions";
+import { login } from "./actions";
 
 export default function Login() {
-  const [state, action] = useFormState(handleSubmit, null);
+  const [state, action] = useFormState(login, null);
 
   return (
     <div className="flex flex-col gap-10 py-8 px-6">
@@ -22,17 +23,19 @@ export default function Login() {
           type="text"
           name="email"
           placeholder="Email"
+          errors={state?.fieldErrors.email}
           required />
 
         <Input
           type="text"
           name="password"
           placeholder="Password"
-          errors={state?.errors}
+          minLength={PASSWORD_MIN_LENGTH}
+          errors={state?.fieldErrors.password}
           required />
 
-        <Button 
-          text="Create Account"/>
+        <Button
+          text="Create Account" />
       </form>
 
       <div className="w-full h-px bg-neutral-500" />

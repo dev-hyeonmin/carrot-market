@@ -2,6 +2,7 @@
 
 import Button from "@/components/actions/button";
 import Input from "@/components/form/input";
+import { PASSWORD_MIN_LENGTH } from "@/lib/constants";
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { useFormState } from "react-dom";
@@ -36,6 +37,7 @@ export default function CreateAccount() {
           type="text"
           name="password"
           placeholder="Password"
+          minLength={PASSWORD_MIN_LENGTH}
           errors={state?.fieldErrors.password}
           required />
 
@@ -43,6 +45,7 @@ export default function CreateAccount() {
           type="text"
           name="confirmPassword"
           placeholder="Confirm Password"
+          minLength={PASSWORD_MIN_LENGTH}
           errors={state?.fieldErrors.confirmPassword}
           required />
 

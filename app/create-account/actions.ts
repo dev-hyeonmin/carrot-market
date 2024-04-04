@@ -1,5 +1,6 @@
 "use server"
 
+import { PASSWORD_MIN_LENGTH, PASSWORD_REGEX, PASSWORD_REGEX_ERROR } from "@/lib/constants";
 import { z } from "zod";
 
 const checkUsername = (username: string) => !username.includes("admin");
@@ -7,9 +8,6 @@ const checkPasswords = ({ password, confirmPassword }: {
   password: string,
   confirmPassword: string
 }) => password === confirmPassword;
-const passwordRegex = new RegExp(
-  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).+$/
-);
 
 const formSchema = z.object({
   username: z.string({
@@ -20,8 +18,8 @@ const formSchema = z.object({
     .trim()
     .refine(username => checkUsername(username), "No admin allowed 🙅‍♀️"),
   email: z.string().email("It's not an email format 😞"),
-  password: z.string().min(8).regex(passwordRegex, "A password must have lowercase, UPPERCASE, a number and special characters."),
-  confirmPassword: z.string().min(8),
+  password: z.string().min(PASSWORD_MIN_LENGTH).regex(PASSWORD_REGEX, PASSWORD_REGEX_ERROR),
+  confirmPassword: z.string().min(PASSWORD_MIN_LENGTH),
 }).refine(checkPasswords, {
   message: "Both passwords should be the same.",
   path: ["confirmPassword"]
@@ -39,6 +37,7 @@ export async function createAccount(prevState: any, formData: FormData) {
   if (!result.success) {
     return result.error.flatten();
   } else {
+    // success!!
     console.log(result.data)
   }
 }
