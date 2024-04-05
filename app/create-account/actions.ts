@@ -38,6 +38,6 @@ export async function createAccount(prevState: any, formData: FormData) {
     return result.error.flatten();
   } else {
     // success!!
-    console.log(result.data)
+    console.log(result.data);
   }
 }

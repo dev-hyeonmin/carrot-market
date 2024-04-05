@@ -30,6 +30,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.11.30"],\
           ["@types/react", "npm:18.2.69"],\
           ["@types/react-dom", "npm:18.2.22"],\
+          ["@types/validator", "npm:13.11.9"],\
           ["autoprefixer", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:10.4.19"],\
           ["daisyui", "npm:4.8.0"],\
           ["eslint", "npm:8.57.0"],\
@@ -42,6 +43,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:18.2.0"],\
           ["tailwindcss", "npm:3.4.1"],\
           ["typescript", "patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"],\
+          ["validator", "npm:13.11.0"],\
           ["zod", "npm:3.22.4"]\
         ],\
         "linkType": "SOFT"\
@@ -498,6 +500,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/@types-scheduler-npm-0.16.8-303819b439-10c0.zip/node_modules/@types/scheduler/",\
         "packageDependencies": [\
           ["@types/scheduler", "npm:0.16.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/validator", [\
+      ["npm:13.11.9", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-validator-npm-13.11.9-ac3f0e748e-10c0.zip/node_modules/@types/validator/",\
+        "packageDependencies": [\
+          ["@types/validator", "npm:13.11.9"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3329,6 +3340,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.11.30"],\
           ["@types/react", "npm:18.2.69"],\
           ["@types/react-dom", "npm:18.2.22"],\
+          ["@types/validator", "npm:13.11.9"],\
           ["autoprefixer", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:10.4.19"],\
           ["daisyui", "npm:4.8.0"],\
           ["eslint", "npm:8.57.0"],\
@@ -3341,6 +3353,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:18.2.0"],\
           ["tailwindcss", "npm:3.4.1"],\
           ["typescript", "patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"],\
+          ["validator", "npm:13.11.0"],\
           ["zod", "npm:3.22.4"]\
         ],\
         "linkType": "SOFT"\
@@ -4953,6 +4966,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/util-deprecate-npm-1.0.2-e3fe1a219c-10c0.zip/node_modules/util-deprecate/",\
         "packageDependencies": [\
           ["util-deprecate", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["validator", [\
+      ["npm:13.11.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/validator-npm-13.11.0-f0143e2784-10c0.zip/node_modules/validator/",\
+        "packageDependencies": [\
+          ["validator", "npm:13.11.0"]\
         ],\
         "linkType": "HARD"\
       }]\
