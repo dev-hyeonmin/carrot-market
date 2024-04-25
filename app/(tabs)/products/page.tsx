@@ -1,3 +1,4 @@
+import ListProduct from "@/components/list-product";
 import db from "@/lib/db";
 
 async function getProducts() {
@@ -7,7 +8,8 @@ async function getProducts() {
       title: true,
       price: true,
       description: true,
-      photo: true
+      photo: true,
+      created_at: true
     }
   });
 
@@ -16,8 +18,14 @@ async function getProducts() {
 
 export default async function Products() {
   const products = await getProducts();
-  
+
   return (
-    <h1>Products</h1>
+    <>
+      <h1>Products</h1>
+
+      {products.map(product =>
+        <ListProduct key={product.id} {...product} />
+      )}
+    </>
   )
 }
