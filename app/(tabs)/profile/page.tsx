@@ -5,7 +5,7 @@ import { notFound, redirect } from "next/navigation";
 
 async function getUser() {
   const session = await getSession();
-  
+
   if (session.id) {
     const user = await db.user.findUnique({
       where: {
@@ -31,10 +31,10 @@ const logOut = async () => {
 export default async function Profile() {
   const user = await getUser();
   return (
-    <div className="flex items-center justify-center flex-col h-screen">
+    <div className="flex flex-col items-center justify-center h-screen">
       <h1>Welcome! {user.username}!</h1>
       <form action={logOut}>
-        <Button text="Logout"/>
+        <Button text="Logout" />
       </form>
     </div>
   )
